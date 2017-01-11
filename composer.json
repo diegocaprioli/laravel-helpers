@@ -13,9 +13,12 @@
         "php": ">=5.4",
         "laravel/framework": ">=5.0"
     },
+    "require-dev": {
+        "phpunit/phpunit": "5.5.*"
+    },
     "autoload": {
         "files": [
-            "Helpers/array-functions.php"
+            "src/Helpers/array-functions.php"
         ],
         "psr-4": {
             "DiegoCaprioli\\LaravelHelpers\\": "src/"
