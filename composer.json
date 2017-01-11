@@ -1,0 +1,25 @@
+{
+    "name": "diegocaprioli/laravel-helpers",
+    "description": "Useful helper functions for your Laravel project",
+    "keywords": ["laravel", "helpers", "helper", "functions"],
+    "authors": [
+        {
+            "name": "Diego Caprioli",
+            "email": "diegocaprioli@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4",
+        "laravel/framework": ">=5.0"
+    },
+    "autoload": {
+        "files": [
+            "Helpers/array-functions.php"
+        ],
+        "psr-4": {
+            "DiegoCaprioli\\LaravelHelpers\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
