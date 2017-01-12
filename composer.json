@@ -18,7 +18,8 @@
     },
     "autoload": {
         "files": [
-            "src/Helpers/array-functions.php"
+            "src/Helpers/array-functions.php",
+            "src/Helpers/string-functions.php"
         ],
         "psr-4": {
             "DiegoCaprioli\\LaravelHelpers\\": "src/"
