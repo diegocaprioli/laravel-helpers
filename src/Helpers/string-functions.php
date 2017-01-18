@@ -113,3 +113,24 @@ if (!function_exists('tokenize_search_terms')) {
 
 }
 
+
+if (!function_exists('emptyVal')) {
+
+    /**
+     * Evaluates the $value and if it's empty returns the specified $default. If it's NOT empty, returns the $value
+     * itself.
+     *
+     * @param mixed $value
+     * @param mixed $default
+     * @return mixed
+     */
+    function emptyVal($value, $default = '')
+    {
+        if (empty($value)) {
+            return $default;
+        } else {
+            return $value;
+        }
+    }
+
+}
