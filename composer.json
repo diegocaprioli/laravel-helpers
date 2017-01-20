@@ -21,7 +21,8 @@
         "files": [
             "src/Helpers/array-functions.php",
             "src/Helpers/string-functions.php",
-            "src/Helpers/form-functions.php"
+            "src/Helpers/form-functions.php",
+            "src/Helpers/collection-functions.php"
         ],
         "psr-4": {
             "DiegoCaprioli\\LaravelHelpers\\": "src/"
