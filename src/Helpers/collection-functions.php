@@ -45,12 +45,11 @@ if (!function_exists('convertToOptions')) {
 
                 // try to get the __toString()
                 $objectString = null;
-                try {
-                    $objectString = $object->__toString();
-                } catch (\Exception $e) {
+                if (!method_exists($object, '__toString')) {
                     trigger_error("Cannot access the __toString() method of the object instance (" . get_class($object) . ")", E_USER_WARNING);
                     continue;
                 }
+                $objectString = $object->__toString();
 
                 if (!empty($includeOnlyInstancesOf)) {
                     if (!is_a($object, $includeOnlyInstancesOf)) {
