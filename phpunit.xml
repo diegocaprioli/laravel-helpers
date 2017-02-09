@@ -1,4 +1,4 @@
-<phpunit bootstrap=""
+<phpunit bootstrap="tests/bootstrap/phpunit.php"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
