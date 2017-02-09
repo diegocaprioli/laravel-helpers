@@ -39,11 +39,12 @@ if (!function_exists('tokenize_search_terms')) {
 
     /**
      * Returns an array with each word in the $string, tokenized as search terms.
-     * It splits the $string by blank spaces. If some words are between single or double quotes, all words
+     * It splits the $string by blank spaces. If some words are between double quotes, all words
      * inside the quotes will be treated as a single term. Any other symbol will be treated as a simple character.
      * Examples:
-     * - hello World!               => ['hello', 'World!']
-     * - "say hi" to "the World!"   => ['say hi', 'to', 'the World!']
+     * - hello World!               => ["hello", "World!"]
+     * - "say hi" to "the World!"   => ["say hi", "to", "the World!"]
+     * - rosemary's willoughby      => ["rosemary's", "willoughby"]
      *
      * @param $string
      * @return array
@@ -56,10 +57,8 @@ if (!function_exists('tokenize_search_terms')) {
             return [];
         }
 
-        // replace any double quotes with single quotes for simpler processing
-        $string = str_replace('"', "'", $string);
-        // put spaces between the single quotes, so it's tokenized properly for the processing below
-        $string = str_replace("'", " ' ", $string);
+        // put spaces between the double quotes, so it's tokenized properly for the processing below
+        $string = str_replace("\"", " \" ", $string);
 
         // Separate by spaces
         $tokenized = explode(" ", $string);
@@ -76,7 +75,7 @@ if (!function_exists('tokenize_search_terms')) {
                 continue;
             }
 
-            if ($word == "'") {
+            if ($word == "\"") {
                 // It's a delimiter
 
                 if ($opened) {
