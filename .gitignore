@@ -1,2 +1,4 @@
 .idea/
 vendor/
+*.sublime-workspace
+*.sublime-project

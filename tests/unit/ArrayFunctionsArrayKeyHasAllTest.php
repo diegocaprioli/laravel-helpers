@@ -18,5 +18,5 @@ class ArrayFunctionsArrayKeyHasAllTest extends \PHPUnit\Framework\TestCase {
     {
         $this->assertFalse(array_key_has_all($this->search, ['one', 'four']));
     }
-    
+
 } 

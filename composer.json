@@ -22,7 +22,9 @@
             "src/Helpers/array-functions.php",
             "src/Helpers/string-functions.php",
             "src/Helpers/form-functions.php",
-            "src/Helpers/collection-functions.php"
+            "src/Helpers/collection-functions.php",
+            "src/Helpers/numeric-functions.php",
+            "src/Helpers/html-functions.php"
         ],
         "psr-4": {
             "DiegoCaprioli\\LaravelHelpers\\": "src/"
