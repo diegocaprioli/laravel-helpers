@@ -133,3 +133,43 @@ if (!function_exists('emptyVal')) {
     }
 
 }
+
+
+if (!function_exists('truncate_by_token')) {
+
+    /**
+     * Truncates a string to a maximum of $maxLength chars, chopping only at the
+     * position where the specified $token is.
+     * 
+     * @param  string  $string
+     * @param  integer $maxLength
+     * @param  string  $token
+     * @return string
+     */
+    function truncate_by_token($string, $maxLength = 100, $token = ' ')
+    {
+
+        if (strlen($string) > $maxLength) {
+            //Log::info("Limiting length");
+            $exploded = explode($token, $string);
+            //Log::info('Exploded: ' . var_export($exploded, true));
+            $partsToInclude = [];
+            $currentLength = 0;
+            foreach ($exploded as $part) {
+                if ($currentLength + strlen($part) <= $maxLength) {
+                    $partsToInclude[] = $part;
+                    $currentLength += strlen($part) + strlen($token); // To account for the token len too!
+                } else {
+                    // No more space to fit another part
+                    break;
+                }
+            }
+            //Log::info('Final parts: ' . var_export($partsToInclude, true));
+            return implode($token, $partsToInclude);
+        } else {
+            return $string;
+        }
+    }
+
+
+}
