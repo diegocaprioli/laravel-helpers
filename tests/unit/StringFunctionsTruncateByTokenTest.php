@@ -7,10 +7,10 @@ class StringFunctionsTruncateByTokenTest extends \PHPUnit\Framework\TestCase {
     {
         $value = 'This is a long caption text with several words in it, not sure why.';
         
-        $expected = 'This is a long';
+        $expected = 'This is a long...';
         $this->assertEquals($expected, truncate_by_token($value, 20));
         
-        $expected = 'This is a long caption';
+        $expected = 'This is a long caption...';
         $this->assertEquals($expected, truncate_by_token($value, 25));
         
         $this->assertEquals($value, truncate_by_token($value, 100));

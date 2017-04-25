@@ -146,7 +146,7 @@ if (!function_exists('truncate_by_token')) {
      * @param  string  $token
      * @return string
      */
-    function truncate_by_token($string, $maxLength = 100, $token = ' ')
+    function truncate_by_token($string, $maxLength = 100, $token = ' ', $posfix = '...')
     {
 
         if (strlen($string) > $maxLength) {
@@ -165,7 +165,8 @@ if (!function_exists('truncate_by_token')) {
                 }
             }
             //Log::info('Final parts: ' . var_export($partsToInclude, true));
-            return implode($token, $partsToInclude);
+            $return = implode($token, $partsToInclude) . $posfix;
+            return $return;
         } else {
             return $string;
         }
