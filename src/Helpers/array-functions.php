@@ -13,10 +13,10 @@
 if (!function_exists('array_has_all')) {
 
     /**
-     * Returns true if all the $keys are present in the $array
+     * Returns true if all the $values are present in the $array
      *
      * @param array $search Array to search into
-     * @param array $values the values that should be present in $array
+     * @param array $values The values that should be present in $array
      * @return bool
      */
     function array_has_all(array $search, array $values)
