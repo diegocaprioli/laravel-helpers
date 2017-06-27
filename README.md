@@ -1,5 +1,9 @@
 # Laravel Helpers
 
-Playing ground for some Laravel helpers.
+NOTICE: Still in draft mode.
 
-In draft mode still...
+Some simple function helpers to be used on Laravel projects.
+
+### Table of Contents
+
+??
