@@ -44,8 +44,7 @@ if (!function_exists('convertToOptions')) {
 
                 $objectId = $object->id;
 
-                // try to get the __toString()
-                $objectString = null;
+                // try to get the __toString()                
                 if (!method_exists($object, '__toString')) {
                     trigger_error("Cannot access the __toString() method of the object instance (" . get_class($object) . ")", E_USER_WARNING);
                     continue;
