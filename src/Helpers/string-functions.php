@@ -52,7 +52,7 @@ if (!function_exists('tokenize_search_terms')) {
     function tokenize_search_terms($string)
     {
 
-        // Empty string is empty array:
+        // An empty string means an empty array
         if (empty($string)) {
             return [];
         }
@@ -149,10 +149,8 @@ if (!function_exists('truncate_by_token')) {
     function truncate_by_token($string, $maxLength = 100, $token = ' ', $posfix = '...')
     {
 
-        if (strlen($string) > $maxLength) {
-            //Log::info("Limiting length");
-            $exploded = explode($token, $string);
-            //Log::info('Exploded: ' . var_export($exploded, true));
+        if (strlen($string) > $maxLength) {            
+            $exploded = explode($token, $string);            
             $partsToInclude = [];
             $currentLength = 0;
             foreach ($exploded as $part) {
@@ -163,8 +161,7 @@ if (!function_exists('truncate_by_token')) {
                     // No more space to fit another part
                     break;
                 }
-            }
-            //Log::info('Final parts: ' . var_export($partsToInclude, true));
+            }            
             $return = implode($token, $partsToInclude) . $posfix;
             return $return;
         } else {

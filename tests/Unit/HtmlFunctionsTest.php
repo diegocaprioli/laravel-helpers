@@ -1,4 +1,4 @@
-<?php
+<?php namespace DiegoCaprioli\LaravelHelpers\Tests\Unit;
 
 class HtmlFunctionsTest extends \PHPUnit\Framework\TestCase {
 

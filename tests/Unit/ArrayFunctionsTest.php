@@ -1,4 +1,4 @@
-<?php
+<?php namespace DiegoCaprioli\LaravelHelpers\Tests\Unit;
 
 class ArrayFunctionsTest extends \PHPUnit\Framework\TestCase {
 

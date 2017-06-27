@@ -22,7 +22,7 @@ if (!function_exists('human_format')) {
         
         if ($float < 1000) {
             return round($float, 2);
-        } elseif ($float >= 1000 and $float < 1000000) {
+        } elseif ($float >= 1000 && $float < 1000000) {
             return round($float / 1000, 2) . 'k';            
         } else {
             return round($float / 1000000, 2) . 'm';

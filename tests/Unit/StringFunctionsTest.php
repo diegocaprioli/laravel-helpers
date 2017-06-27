@@ -1,4 +1,4 @@
-<?php
+<?php namespace DiegoCaprioli\LaravelHelpers\Tests\Unit;
 
 class StringFunctionsTest extends \PHPUnit\Framework\TestCase {
 
@@ -99,6 +99,20 @@ class StringFunctionsTest extends \PHPUnit\Framework\TestCase {
         $this->assertTrue(strpos($guid, '{') === false, '{ was found');
         $this->assertTrue(strpos($guid, '}') === false, '} was found');
         $this->assertTrue(strpos($guid, '-') === false, '- was found');        
+    }
+
+    public function test_emptyVal_returns_the_default_value_when_empty()
+    {
+        $value = null;
+        $default = "one";
+        $this->assertEquals($default, emptyVal($value, $default));
+    }
+
+    public function test_emptyVal_returns_the_value_when_not_empty()
+    {
+        $value = "two";
+        $default = "one";
+        $this->assertEquals($value, emptyVal($value, $default));
     }
 
 } 
